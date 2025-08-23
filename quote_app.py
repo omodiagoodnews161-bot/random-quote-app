@@ -57,3 +57,58 @@ if st.button("💡 Inspire Me"):
     # Share to Twitter link
     tweet_url = "https://twitter.com/intent/tweet?text=" + urllib.parse.quote(quote)
     st.markdown(f"[🐦 Share this quote on Twitter]({tweet_url})")
+
+custom_st_style = """
+    <style>
+    #MainMenu {visibility: hidden;}     /* Hides the hamburger menu */
+    header {visibility: hidden;}       /* Hides the header */
+    footer {visibility: hidden;}       /* Hides the default footer */
+    
+    /* Add custom footer */
+    .custom-footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #0e1117; /* dark background */
+        color: #fafafa;            
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        border-top: 1px solid #444;
+        z-index: 100;
+    }
+
+    .custom-footer a {
+        color: #61dafb; /* link color (light blue) */
+        text-decoration: none;
+        margin: 0 8px;
+    }
+
+    .custom-footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .custom-footer {
+            font-size: 12px;
+            padding: 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .custom-footer {
+            font-size: 11px;
+            padding: 6px;
+        }
+    }
+    </style>
+
+    <div class="custom-footer">
+        Built by <b>Goodnews</b> © 2025 | Powered with ❤️ by Streamlit <br>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+        
+    </div>
+"""
+st.markdown(custom_st_style, unsafe_allow_html=True)
